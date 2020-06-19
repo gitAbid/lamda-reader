@@ -95,66 +95,75 @@ class _MangaLandingState extends State<MangaLanding> {
                           children: [
                             Flexible(
                               flex: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.blueGrey[200]
-                                            .withOpacity(0.5),
-                                        spreadRadius: 10,
-                                        blurRadius: 100,
-                                        offset: Offset(
-                                            0, 0), // changes position of shadow
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) {
+                                      return MangaList();
+                                    },
+                                  ));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.blueGrey[200]
+                                              .withOpacity(0.5),
+                                          spreadRadius: 10,
+                                          blurRadius: 100,
+                                          offset: Offset(0,
+                                              0), // changes position of shadow
+                                        ),
+                                      ],
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6.0))),
+                                  child: Row(
+                                    children: [
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10.0),
+                                          child: Icon(
+                                            Icons.search,
+                                            color: Color.fromARGB(
+                                                70, 93, 115, 139),
+                                          ),
+                                        ),
+                                        flex: 20,
+                                      ),
+                                      InkWell(
+                                        child: Flexible(
+                                          flex: 90,
+                                          child: Padding(
+                                            padding:  const EdgeInsets.fromLTRB(
+                                                6.0, 15, 0, 15),
+                                            child: Text(
+                                              "Search",
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.blueGrey[400],
+                                                fontFamily: 'Roboto',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ],
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(6.0))),
-                                child: Row(
-                                  children: [
-                                    Flexible(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10.0),
-                                        child: Icon(
-                                          Icons.search,
-                                          color:
-                                              Color.fromARGB(70, 93, 115, 139),
-                                        ),
-                                      ),
-                                      flex: 20,
-                                    ),
-                                    Flexible(
-                                      flex: 90,
-                                      child: TextField(
-                                        decoration: new InputDecoration(
-                                            hintStyle: TextStyle(
-                                              color: Colors.blueGrey[400],
-                                              fontFamily: 'Roboto',
-                                            ),
-                                            border: InputBorder.none,
-                                            focusedBorder: InputBorder.none,
-                                            enabledBorder: InputBorder.none,
-                                            errorBorder: InputBorder.none,
-                                            disabledBorder: InputBorder.none,
-                                            hintText: "Search",
-                                            contentPadding:
-                                                const EdgeInsets.fromLTRB(
-                                                    6.0, 0.0, 0, 0.0)),
-                                        style: TextStyle(
-                                          color: Colors.blueGrey[400],
-                                          fontFamily: 'Roboto',
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ),
                             Flexible(
                               flex: 20,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) {
+                                      return MangaList();
+                                    },
+                                  ));
+                                },
                                 child: Container(
                                   child: Padding(
                                     padding: const EdgeInsets.all(12.0),

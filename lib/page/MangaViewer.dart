@@ -29,6 +29,7 @@ class _MangaViewerState extends State<MangaViewer> {
 
   @override
   void initState() {
+    progress = 0;
     index = widget._index;
     _chapter = widget._manga.chapters[index];
     listKey = ObjectKey(_chapter.id);
@@ -41,7 +42,8 @@ class _MangaViewerState extends State<MangaViewer> {
 
     setState(() {
       progress =
-          ((100 / _controller.position.maxScrollExtent) * currentPosition) / 100;
+          ((100 / _controller.position.maxScrollExtent) * currentPosition) /
+              100;
     });
   }
 
@@ -49,6 +51,7 @@ class _MangaViewerState extends State<MangaViewer> {
     // monitor network fetch
     await Future.delayed(Duration(milliseconds: 1000));
     setState(() {
+      progress = 0;
       _chapter = widget._manga.chapters[index];
       listKey = ObjectKey(Random.secure().nextDouble().toString());
     });
@@ -64,6 +67,7 @@ class _MangaViewerState extends State<MangaViewer> {
         index = index - 1;
         _chapter = widget._manga.chapters[index];
         listKey = ObjectKey(_chapter.id);
+        progress = 0;
       }
     });
     _refreshController.loadComplete();

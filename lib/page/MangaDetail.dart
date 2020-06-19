@@ -18,8 +18,8 @@ class MangaDetail extends StatefulWidget {
 }
 
 class _MangaDetailState extends State<MangaDetail> {
-  var dummyCoverUrl =
-      "https://cdn.the-scientist.com/assets/articleNo/66547/aImg/33968/tech-transfer-thumb-s.png";
+//  var dummyCoverUrl = "https://drive.google.com/uc?export=view&id=13YJ1dghZK5axnVSFhgb2SGAZsZBSlr8f";
+  var dummyCoverUrl = "https://cdn.the-scientist.com/assets/articleNo/66547/aImg/33968/tech-transfer-thumb-s.png";
   Future<Manga> manga;
 
   Future<Manga> getManga() async {
@@ -323,6 +323,7 @@ class _MangaDetailState extends State<MangaDetail> {
                                   manga = snapshot.data;
                                   chapters = snapshot.data.chapters;
                                   return ListView.builder(
+                                    padding: const EdgeInsets.all(0),
                                     physics:
                                         const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
@@ -342,7 +343,7 @@ class _MangaDetailState extends State<MangaDetail> {
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.fromLTRB(
-                                                20, 10, 20, 8),
+                                                20, 15, 20, 8),
                                             child: Text(
                                               chapters[index].chapterName,
                                               style: TextStyle(
@@ -354,7 +355,7 @@ class _MangaDetailState extends State<MangaDetail> {
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.fromLTRB(
-                                                20, 0, 20, 10),
+                                                20, 0, 20, 15),
                                             child: Text(
                                               chapters[index].lastUpdated,
                                               style: TextStyle(
@@ -364,7 +365,7 @@ class _MangaDetailState extends State<MangaDetail> {
                                                   fontFamily: 'Roboto'),
                                             ),
                                           ),
-                                          Divider(),
+                                          Divider(height: 0,),
                                         ],
                                       ),
                                     ),
