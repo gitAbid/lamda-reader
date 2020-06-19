@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lamdareader/model/Models.dart';
+import 'package:lamdareader/page/MangaDetail.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-Widget getMangaCover(Manga manga, BuildContext context) {
+Widget getMangaCover(MangaUpdate manga, BuildContext context) {
   var width = MediaQuery.of(context).size.width;
   width = width - 40;
   return Container(
@@ -14,7 +15,13 @@ Widget getMangaCover(Manga manga, BuildContext context) {
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         radius: 20,
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => MangaDetail(manga.mangaUrl),
+            ),
+          );
+        },
         child: Column(
           children: [
             Container(
