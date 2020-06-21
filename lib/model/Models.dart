@@ -59,24 +59,19 @@ class MangaUpdate {
   String mangaName;
   String mangaUrl;
   String cover;
-  int viewCount;
-  String latestChapter;
+  String status;
+  double rating;
   String lastUpdated;
-  String lastChapterUpdated;
   String description;
-  bool isChapterUpdated;
-
   MangaUpdate(
       {this.id,
-      this.mangaName,
-      this.cover,
-      this.description,
-      this.mangaUrl,
-      this.lastUpdated,
-      this.viewCount,
-      this.lastChapterUpdated,
-      this.latestChapter,
-      this.isChapterUpdated});
+        this.mangaName,
+        this.cover,
+        this.description,
+        this.mangaUrl,
+        this.status,
+        this.rating,
+        this.lastUpdated});
 
   factory MangaUpdate.fromJson(Map<String, dynamic> json) {
     return MangaUpdate(
@@ -84,10 +79,9 @@ class MangaUpdate {
         mangaName: json["mangaName"],
         cover: json["cover"],
         mangaUrl: json["mangaUrl"],
-        lastUpdated: json["lastUpdated"],
-        viewCount: json["viewCount"],
+        status: json["status"],
+        rating: json["rating"],
         description: json["description"],
-        isChapterUpdated: json["isChapterUpdated"],
-        latestChapter: json["latestChapter"]);
+        lastUpdated: json["mangaLastUpdated"]);
   }
 }

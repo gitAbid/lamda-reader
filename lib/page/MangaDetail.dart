@@ -24,7 +24,7 @@ class _MangaDetailState extends State<MangaDetail> {
 
   Future<Manga> getManga() async {
     Manga manga;
-    String link = "http://52.66.213.188:9090/v1/manga/srcUrl/";
+    String link = "http://13.233.104.213:9090/v1/manga/srcUrl/";
 //    String link = "http://172.22.176.1:9090/v1/manga/srcUrl/";
 //    var res = await http.get(Uri.encodeFull(link));
     var res = await http.post(

@@ -33,19 +33,19 @@ class _MangaViewerState extends State<MangaViewer> {
     index = widget._index;
     _chapter = widget._manga.chapters[index];
     listKey = ObjectKey(_chapter.id);
-    _controller.addListener(_scrollListener);
+    //_controller.addListener(_scrollListener);
     super.initState();
   }
 
-  _scrollListener() {
-    currentPosition = _controller.offset;
-
-    setState(() {
-      progress =
-          ((100 / _controller.position.maxScrollExtent) * currentPosition) /
-              100;
-    });
-  }
+//  _scrollListener() {
+//    currentPosition = _controller.offset;
+//
+//    setState(() {
+//      progress =
+//          ((100 / _controller.position.maxScrollExtent) * currentPosition) /
+//              100;
+//    });
+//  }
 
   void _onRefresh() async {
     // monitor network fetch
@@ -76,11 +76,10 @@ class _MangaViewerState extends State<MangaViewer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: LinearProgressIndicator(
-        value: progress,
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-        backgroundColor: Colors.red,
-      ),
+//      bottomNavigationBar: LinearProgressIndicator(
+//        value: progress,
+//        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[600]),
+//      ),
       body: SafeArea(
         child: Container(
           color: Colors.white,
